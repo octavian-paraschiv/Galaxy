@@ -1,0 +1,75 @@
+/*===== Error Popup dialog =====>>>*/
+
+//------- sweetalert2 component ---------------
+.swal2-popup.swal2-standard-popup {
+  /* sets background image to the popup error dialog */
+  background: none;
+  background-color: white;
+  border-color: $lightskyblue;
+}
+
+.swal2-popup.swal2-eula-popup {
+  width: 80vw;
+}
+
+div.swal2-standard-content > div > div.swal2-html-container {
+  /* sets font color for the error popup dialog */
+  color: black;
+  font-weight: 600;
+  font-size: $font-size-medium-plus;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgb(157, 157, 157);
+  display: block;
+  padding: 1em;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+/* font color used in eula popup */
+div.swal2-eula-content > div > div.swal2-html-container {
+  color: $alert-font-color;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+button.swal2-styled.swal2-confirm {
+  padding: 8px 22px;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+  color: $button-primary-color;
+  background-color: unset;
+  border: 2px solid;
+  border-color: $alert-button-color;
+  min-width: 10rem;
+  letter-spacing: 1px;
+}
+
+div.swal2-actions {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+button.swal2-styled.swal2-cancel {
+  padding: 8px 22px;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+  color: $button-primary-color;
+  background-color: $alert-button-color;
+  border-color: $alert-button-color;
+  min-width: 10rem;
+  letter-spacing: 1px;
+}
+
+button.swal2-styled:focus {
+  color: $button-primary-color;
+  box-shadow: 0 0 0 0 darken($alert-button-color, 5%)
+}
+
+.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen) > .swal2-eula-popup {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+//------- sweetalert2 component ---------------
+
+/*===== Error Popup dialog =====<<<*/

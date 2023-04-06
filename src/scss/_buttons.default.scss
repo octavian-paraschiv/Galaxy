@@ -1,0 +1,124 @@
+/* set color of the navigation buttons */
+.btn-primary {
+  background-color:  $button-primary-color;
+  color: $page-navbutton-font-color;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: darken( $button-primary-color, 5%);
+    border-color: $button-secondary-color;
+    color: $page-navbutton-font-color;
+
+    &::before {
+      background: darken( $button-primary-color, 10%);
+    }
+  }
+
+  &:disabled {
+    background-color: lighten( $button-primary-color, 5%);
+    border-color: $button-secondary-color;
+    color: $page-navbutton-font-color;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem darken( $button-primary-color, 5%);
+    outline: none;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: darken( $button-primary-color, 5%);
+    border-color: $button-secondary-color;
+    color: $page-navbutton-font-color;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem darken( $button-primary-color, 5%);
+    }
+  }
+}
+
+.btn-secondary {
+  background-color: $button-secondary-color;
+  color: $button-primary-color;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: darken($button-secondary-color, 5%);
+    border-color: $button-primary-color;
+    color: $button-primary-color;
+
+    &::before {
+      background: darken($button-secondary-color, 10%);
+    }
+  }
+
+  &:disabled {
+    background-color: lighten($button-secondary-color, 5%);
+    border-color: $button-primary-color;
+    color: $button-primary-color;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem darken($button-secondary-color, 5%);
+    outline: none;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: darken($button-secondary-color, 5%);
+    border-color: $button-primary-color;
+    color: $button-primary-color;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem darken($button-secondary-color, 5%);
+      outline: none;
+    }
+  }
+}
+
+button {
+  -webkit-app-region: no-drag;
+  border-radius: $border-radius;
+}
+
+.vertical-bigbuttons {
+  width: 40rem;
+  font-size: $font-size-large-plus;
+  margin: 1rem;
+  border: none;
+  border-radius: $border-radius;
+  min-height: 9rem;
+  max-height: 11rem;
+}
+
+.navbutton {
+  width: 16rem;
+  height: 8rem;
+  font-size: $font-size-large;
+  margin: 1.5em;
+  border-radius: none;
+  border: none;
+  border-radius: $border-radius;
+}
+
+/*Home button*/
+.startover-btn {
+  content: "\f015";
+  font-family: FontAwesome;
+  font-size: 6.6rem;
+  padding: 1vh;
+  border-radius: 0.15em;
+}
+
+.commbutton {
+  width: 10rem;
+  height: 4rem;
+  font-size: $font-size-small;
+  margin-top: 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: $border-radius;
+}
+
+/* Overwrite pagination link color */
+.ngx-pagination .disabled {
+  color: grey !important;
+}

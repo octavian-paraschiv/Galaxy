@@ -1,0 +1,45 @@
+/*===== Shared styles =====>>>*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+router-outlet {
+  position: absolute;
+  /*prevent the grid and flexbox from positioning this item as a valid visible element*/
+}
+
+label {
+  margin-bottom: 0;
+}
+/*===== Shared styles =====<<<*/
+
+/*===== Main Page =====>>>*/
+.galaxy-main {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  grid-template-rows: auto 1fr auto 1fr auto;
+  grid-template-areas:
+    "h h h"
+    ". . ."
+    ". c ."
+    ". . ."
+    "f f f";
+  /* sets application background image */
+  background: white;
+  background-size: cover;
+  /* sets font color of the app */
+  color: $app-main-font-color;
+  /* sets font style of the app */
+  font-family: 'Verdana';
+  margin: 0;
+  height: 100%;
+}
+
+.galaxy-main[data-language="en-US"] {
+  font-family: 'Verdana';
+}
+/*===== Main Page =====<<<*/

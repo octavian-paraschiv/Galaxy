@@ -1,0 +1,88 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "DavidAnson.vscode-markdownlint",
+      "EditorConfig.EditorConfig",
+      "streetsidesoftware.code-spell-checker",
+      "dbaeumer.vscode-eslint",
+      "janjoerke.jenkins-pipeline-linter-connector"
+    ]
+  },
+  "settings": {
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "debug.javascript.usePreview": false,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "files.exclude": {
+      ".vscode": true,
+      "coverage": true
+    },
+    "eslint.validate": [
+      "typescript",
+      "javascript",
+      "html"
+    ],
+    "cSpell.ignorePaths": [
+      "angular.json",
+      "*.code-workspace"
+    ],
+    "workbench.tree.indent": 16,
+    "cSpell.words": [ ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build:dev",
+        "type": "shell",
+        "command": "npm run build:dev"
+      }
+    ]
+  },
+  "launch": {
+    "configurations": [
+      {
+        "preLaunchTask": "build:dev",
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Main",
+        "protocol": "inspector",
+        "sourceMaps": true,
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+        "runtimeArgs": [
+          "--remote-debugging-port=9223",
+          "."
+        ],
+        "stopAtEntry": false,
+        "outFiles": [
+          "${workspaceFolder}/**/*.js",
+          "!**/node_modules/**"
+        ],
+        "windows": {
+          "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+        }
+      },
+      {
+          "name": "Attach to Renderer",
+          "type": "chrome",
+          "request": "attach",
+          "port": 9223,
+          "webRoot": "${workspaceFolder}",
+          "timeout": 90000
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Main + Renderer",
+        "configurations": ["Launch Main", "Attach to Renderer"]
+      }
+    ]
+  }
+}

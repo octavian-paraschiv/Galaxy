@@ -1,0 +1,42 @@
+{
+  "productName": "galaxy",
+  "directories": {
+    "output": "release/"
+  },
+    "files": [
+        "**/*",
+        "!**/*.ts",
+        "!*.code-workspace",
+        "!*.md",
+        "!package.json",
+        "!package-lock.json",
+        "!src/",
+        "!hooks/",
+        "!angular.json",
+        "!_config.yml",
+         "!angular.json",
+        "!tsconfig*.json",
+        "!.eslintrc.*",
+        "!karma.conf.js",
+        "!angular.webpack.js",
+        "!*.map"
+    ],
+  "win": {
+    "icon": "dist/galaxy.ico",
+    "target": [
+      "portable"
+    ]
+  },
+  "mac": {
+    "icon": "dist",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist",
+    "target": [
+      "AppImage"
+    ]
+  }
+}
